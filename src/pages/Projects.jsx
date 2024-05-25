@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import appContext from '../context/appContext'
 
 function Projects() {
@@ -14,7 +14,11 @@ function Projects() {
   }, []);
 
   return (
-    <div>Projects</div>
+    <Fragment>
+      <section className="page projects_page">
+        <h1 className="title">Projects</h1>
+      </section>
+    </Fragment>
   )
 }
 

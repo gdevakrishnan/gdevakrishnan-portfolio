@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import appContext from '../context/appContext';
+import AnimatedText from '../components/AnimatedText';
 
 function Skills() {
   const { setNavState } = useContext(appContext);
@@ -17,7 +18,9 @@ function Skills() {
     <Fragment>
       <section className="page skills_page">
         <h1 className="title">{"my skills"}</h1>
-        <h1 className="title">{"<LanguagesAndTools />"}</h1>
+        {/* <h1 className="title">{"<LanguagesAndTools />"}</h1> */}
+
+        <AnimatedText />
 
         <div className="skills">
           <table className="stat_table">
