@@ -34,6 +34,7 @@ body {
   color: var(--main);
   margin-bottom: 1rem;
   font-size: 1.6rem;
+  margin-top: 1rem;
 }
 
 /* Navbar */
@@ -310,53 +311,64 @@ body {
 }
 
 .home_page .right .spinner {
-  width: 200px; /* Adjusted width to 200px */
-  height: 200px; /* Adjusted height to 200px */
+  width: 200px;
+  /* Adjusted width to 200px */
+  height: 200px;
+  /* Adjusted height to 200px */
   position: relative;
   animation: spinner-y0fdc1 4s infinite ease-out;
   transform-style: preserve-3d;
 }
 
-.home_page .right .spinner > div {
-  background-color: rgba(0,224,213,0.2);
+.home_page .right .spinner>div {
+  background-color: rgba(0, 224, 213, 0.2);
   height: 100%;
   width: 100%;
   position: absolute;
   border: 3.5px solid #00e0d5;
-  box-sizing: border-box; /* Ensure border doesn't affect size */
+  box-sizing: border-box;
+  /* Ensure border doesn't affect size */
 }
 
 .home_page .right .spinner div:nth-of-type(1) {
-  transform: translateZ(100px); /* Adjusted for new size */
+  transform: translateZ(100px);
+  /* Adjusted for new size */
 }
 
 .home_page .right .spinner div:nth-of-type(2) {
-  transform: rotateY(90deg) translateZ(100px); /* Adjusted for new size */
+  transform: rotateY(90deg) translateZ(100px);
+  /* Adjusted for new size */
 }
 
 .home_page .right .spinner div:nth-of-type(3) {
-  transform: rotateY(180deg) translateZ(100px); /* Adjusted for new size */
+  transform: rotateY(180deg) translateZ(100px);
+  /* Adjusted for new size */
 }
 
 .home_page .right .spinner div:nth-of-type(4) {
-  transform: rotateY(-90deg) translateZ(100px); /* Adjusted for new size */
+  transform: rotateY(-90deg) translateZ(100px);
+  /* Adjusted for new size */
 }
 
 .home_page .right .spinner div:nth-of-type(5) {
-  transform: rotateX(90deg) translateZ(100px); /* Adjusted for new size */
+  transform: rotateX(90deg) translateZ(100px);
+  /* Adjusted for new size */
 }
 
 .home_page .right .spinner div:nth-of-type(6) {
-  transform: rotateX(-90deg) translateZ(100px); /* Adjusted for new size */
+  transform: rotateX(-90deg) translateZ(100px);
+  /* Adjusted for new size */
 }
 
 @keyframes spinner-y0fdc1 {
   0% {
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
+
   50% {
     transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
   }
+
   100% {
     transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
@@ -367,7 +379,7 @@ body {
   .home_page {
     flex-direction: column;
   }
-  
+
   .home_page .left {
     width: 100%;
     min-height: 100vh;
@@ -411,7 +423,7 @@ body {
   font-size: 1.4rem;
 }
 
-.about_page .image {
+.profile_image {
   overflow: hidden;
   border-radius: 62% 38% 61% 39% / 62% 39% 61% 38%;
   width: 220px;
@@ -420,7 +432,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.about_page .image .img {
+.profile_image .img {
   width: 100%;
   height: auto;
   object-fit: center;
@@ -431,7 +443,7 @@ body {
 @media screen and (max-width: 800px) {
   .about_page .about_me {
     width: 90%;
-  } 
+  }
 }
 
 /* Education */
@@ -461,19 +473,19 @@ body {
   padding: 20px;
 }
 
-.about_page  .cards .card .left h1{
+.about_page .cards .card .left h1 {
   color: var(--main);
   font-size: 2rem;
 }
 
-.about_page  .cards .card .right .Name {
+.about_page .cards .card .right .Name {
   font-size: 1rem;
   color: var(--text);
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
-.about_page  .cards .card .right .course {
+.about_page .cards .card .right .course {
   color: var(--color2);
 }
 
@@ -617,10 +629,138 @@ body {
   border-radius: 50%;
   font-size: 1rem;
   border: 2px solid var(--color2);
+  transition: all 0.4s ease-in;
 }
 
 .projects_page .cards .card .btn a:hover {
   color: var(--main);
-  background-color: var(--color1); 
+  background-color: var(--color1);
   border-color: var(--main);
+}
+
+/* Contact Page */
+.contact_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.contact_page .main {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-top: 1rem;
+}
+
+.contact_page .main .left,
+.contact_page .main .right {
+  width: 50%;
+  height: auto;
+}
+
+.contact_page .main .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact_page .main .right .details {
+  width: 360px;
+}
+
+.contact_page .main .right .details tr {
+  display: flex;
+}
+
+.contact_page .main .right .details tr th,
+.contact_page .main .right .details tr td {
+  padding: 0.5rem 1rem;
+}
+
+.contact_page .main .right .details tr td {
+  color: var(--text);
+}
+
+.contact_page .main .right .details tr th {
+  color: var(--main);
+}
+
+.contact_page .main .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.contact_page .main .left form {
+  width: 350px;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+
+.contact_page .main .left form input[type="text"],
+.contact_page .main .left form input[type="email"],
+.contact_page .main .left form textarea {
+  background-color: var(--color1);
+  color: var(--text);
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: 2px solid var(--color2);
+  border-radius: 4px;
+  outline: none;
+}
+
+.contact_page .main .left form input[type="text"]:focus,
+.contact_page .main .left form input[type="email"]:focus,
+.contact_page .main .left form textarea:focus {
+  border-color: var(--main);
+}
+
+.contact_page .main .left form textarea {
+  resize: none;
+  font-size: 1.1rem;
+  height: 8rem;
+}
+
+.contact_page .main .left form input[type="submit"] {
+  padding: 14px 46px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 40px;
+  box-shadow: inset 2px 2px 5px 1px var(--main), inset -2px -2px 5px 1px var(--main);
+  color: var(--main);
+  transition: all 0.6s ease;
+  font-weight: 400;
+  border-radius: 5px;
+  background-color: var(--color1);
+}
+
+.contact_page .main .left form input[type="submit"]:hover {
+  background-color: var(--main);
+  color: var(--color1);
+}
+
+@media screen and (max-width: 800px) {
+
+  .contact_page .main .left,
+  .contact_page .main .right {
+    width: 100%;
+    min-height: 80vh;
+  }
+
+  .contact_page .main {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .contact_page .main .left {
+    padding-top: 6rem;
+  }
 }

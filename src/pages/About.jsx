@@ -1,8 +1,8 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import appContext from '../context/appContext';
-import devakrishnan_profile from "../assets/devakrishnan_profile.jpg"
 import { FaSchool } from "react-icons/fa";
 import { FaUserGraduate } from "react-icons/fa";
+import Profile from '../components/Profile';
 
 function About() {
   const { setNavState } = useContext(appContext);
@@ -20,9 +20,7 @@ function About() {
     <Fragment>
       <section className="page about_page">
         <h1 className="title">who i am?</h1>
-        <div className="image">
-          <img src={devakrishnan_profile} alt="" className="img" />
-        </div>
+        <Profile />
         <p className="about_me">
           I'm <span>Devakrishnan G</span>., a visionary Fullstack Developer specializing in the MERN stack (MongoDB, Express.js, React.js, Node.js) and pioneering Blockchain and Web3 technologies. Passionate about pushing boundaries, I craft dynamic web experiences and redefine digital innovation through decentralized solutions. From seamless UIs to secure blockchain projects, I thrive on challenges that drive transformation. Join me on this electrifying journey as we reshape the digital landscape with code and innovation as our guiding stars!
         </p>
