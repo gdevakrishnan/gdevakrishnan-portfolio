@@ -18,7 +18,6 @@ function Projects() {
 
   const CardTemplate = (props) => {
     const { projects } = props;
-    console.log(projects);
     return (
       <Fragment>
         {
