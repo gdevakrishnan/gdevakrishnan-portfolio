@@ -8,13 +8,14 @@ import validator from 'validator'
 import { sendEmail } from '../services/serviceWorker';
 
 function Contact() {
-  const { setNavState } = useContext(appContext);
-  const [msg, setMsg] = useState("Hello this is my message");
-  const [formData, setFormData] = useState({
+  const initialState = {
     name: '',
     gmail: '',
     message: ''
-  });
+  };
+  const { setNavState } = useContext(appContext);
+  const [msg, setMsg] = useState("");
+  const [formData, setFormData] = useState(initialState);
 
   useEffect(() => {
     setNavState({
@@ -50,6 +51,7 @@ function Contact() {
         setTimeout(() => {
           setMsg("");
         }, 5000);
+        setFormData(initialState);
       })
       .catch((e) => console.log(e.message));
   }

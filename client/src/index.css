@@ -438,12 +438,16 @@ body {
   height: 220px;
   border: 4px solid var(--main);
   margin-bottom: 2rem;
+  background-color: var(--color2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00e0d559;
 }
 
 .profile_image .img {
   width: 100%;
   height: auto;
-  object-fit: center;
   border-radius: 40px;
   filter: grayscale(90%);
 }
@@ -771,5 +775,33 @@ body {
 
   .contact_page .main .left {
     padding-top: 6rem;
+  }
+}
+
+/* footer */
+footer {
+  background-color: var(--color1);
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  display: grid;
+  place-items: center;
+}
+
+footer h1 {
+  color: var(--color2);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: center;
+}
+
+footer h1 .name {
+  color: var(--text);
+}
+
+@media screen and (max-width: 800px) {
+  footer h1 .block {
+    display: block;
   }
 }

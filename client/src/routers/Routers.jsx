@@ -6,6 +6,7 @@ import About from '../pages/About'
 import Skills from '../pages/Skills'
 import Projects from '../pages/Projects'
 import Contact from '../pages/Contact'
+import Footer from '../components/Footer'
 
 function Routers() {
   return (
@@ -20,6 +21,7 @@ function Routers() {
                 <Route path = "/contact" element={<Contact />}/>
             </Routes>
             <Outlet />
+            <Footer />
         </Router>
     </Fragment>
   )

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import devakrishnan_profile from "../assets/devakrishnan_profile.jpg"
+import devakrishnan_profile from "../assets/devakrishnan_profile.png"
 
 function Profile() {
   return (
