@@ -37,6 +37,14 @@ body {
   margin-top: 1rem;
 }
 
+.msg {
+  color: var(--main);
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Navbar */
 .menu-container {
   position: relative;

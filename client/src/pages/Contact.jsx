@@ -4,12 +4,14 @@ import Profile from '../components/Profile';
 import { FaMobileAlt } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { FaLocationDot } from "react-icons/fa6";
-import emailjs from 'emailjs-com';
+import validator from 'validator'
+import { sendEmail } from '../services/serviceWorker';
 
 function Contact() {
   const { setNavState } = useContext(appContext);
+  const [msg, setMsg] = useState("Hello this is my message");
   const [formData, setFormData] = useState({
-    uname: '',
+    name: '',
     gmail: '',
     message: ''
   });
@@ -24,36 +26,33 @@ function Contact() {
     });
   }, [setNavState]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.name.trim() === "" || formData.gmail.trim() === "" || formData.message.trim() === "") {
+      setMsg("Enter all the fields");
+      setTimeout(() => {
+        setMsg("");
+      }, 5000);
+      return;
+    }
 
-    emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      formData,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    ).then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      alert('Message sent successfully!');
-    }, (err) => {
-      console.error('FAILED...', err);
-      alert('Failed to send message. Please try again.');
-    });
+    if (!validator.isEmail(formData.gmail)) {
+      setMsg("Invalid Email");
+      setTimeout(() => {
+        setMsg("");
+      }, 5000);
+      return;
+    }
 
-    setFormData({
-      uname: '',
-      gmail: '',
-      message: ''
-    });
-  };
+    sendEmail(formData)
+      .then((response) => {
+        setMsg(response.message);
+        setTimeout(() => {
+          setMsg("");
+        }, 5000);
+      })
+      .catch((e) => console.log(e.message));
+  }
 
   return (
     <Fragment>
@@ -61,15 +60,18 @@ function Contact() {
         <h1 className="title">Contact Me</h1>
         <div className="main">
           <div className="left">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => handleSubmit(e)}>
+              {
+                (msg.trim() !== "") ? <h1 className="msg">{msg}</h1> : null
+              }
               <input
                 type="text"
-                name="uname"
-                id="uname"
+                name="name"
+                id="name"
                 placeholder="Enter your name"
                 autoComplete="off"
-                value={formData.uname}
-                onChange={handleChange}
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, [e.target.id]: e.target.value })}
               />
               <input
                 type="email"
@@ -78,7 +80,7 @@ function Contact() {
                 placeholder="Enter your email"
                 autoComplete="off"
                 value={formData.gmail}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, [e.target.id]: e.target.value })}
               />
               <textarea
                 name="message"
@@ -86,9 +88,9 @@ function Contact() {
                 placeholder="Enter your message"
                 autoComplete="off"
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => setFormData({ ...formData, [e.target.id]: e.target.value })}
               ></textarea>
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" onClick={(e) => handleSubmit(e)} />
             </form>
           </div>
           <div className="right">

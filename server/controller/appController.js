@@ -1,6 +1,10 @@
 const nodemailer = require('nodemailer');
 require("dotenv").config();
 
+const activeServer = async (req, res) => {
+    res.json({"message": "The server is active"}), 200;
+}
+
 const sendEmail = async (req, res) => {
     {
         const { name, email, message } = req.body;
@@ -29,9 +33,9 @@ const sendEmail = async (req, res) => {
                 return res.json({"message": error.message}), 400;
             }
             
-            res.json({"message": "submitted"}), 200;
+            res.json({"message": "message sent"}), 200;
         });
     }
 }
 
-module.exports = { sendEmail }
+module.exports = { sendEmail, activeServer }
