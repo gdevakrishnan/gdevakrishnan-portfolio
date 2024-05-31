@@ -781,7 +781,7 @@ body {
 /* footer */
 footer {
   background-color: var(--color1);
-  width: 100%;
+  width: 100vw;
   min-height: 100px;
   height: auto;
   display: grid;
@@ -801,7 +801,12 @@ footer h1 .name {
 }
 
 @media screen and (max-width: 800px) {
+  * {
+    cursor: default;
+  }
+  
   footer h1 .block {
     display: block;
   }
 }
+
