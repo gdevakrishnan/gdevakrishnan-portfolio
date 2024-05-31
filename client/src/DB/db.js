@@ -1,11 +1,11 @@
-import metawallet from '../assets/projects/metawallet.png'
-import workerManagementSystem from '../assets/projects/worker_management_system.png'
-import voting from '../assets/projects/voting.jpg'
-import lottery from '../assets/projects/lottery.jpg'
-import crowdFunding from '../assets/projects/crowd_funding.jpg'
-import zooscapexr from '../assets/projects/zooscapexr.png'
-import leafy from '../assets/projects/leafy.png'
-import tictactoe from '../assets/projects/tictactoe.png'
+import metawallet from '../assets/projects/metawallet.webp'
+import workerManagementSystem from '../assets/projects/worker_management_system.webp'
+import voting from '../assets/projects/voting.webp'
+import lottery from '../assets/projects/lottery.webp'
+import crowdFunding from '../assets/projects/crowd_funding.webp'
+import zooscapexr from '../assets/projects/zooscapexr.webp'
+import leafy from '../assets/projects/leafy.webp'
+import tictactoe from '../assets/projects/tictactoe.webp'
 
 export const projectsDb = {
     "projects": [
