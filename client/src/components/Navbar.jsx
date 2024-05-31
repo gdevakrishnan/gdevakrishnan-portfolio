@@ -11,62 +11,61 @@ function Navbar() {
 
   return (
     <Fragment>
-      <nav className='nav'>
-        <input type="checkbox" name="check" id="check" />
-        <h1 className="logo">
-          <img src={logo} alt="gd" className="img" />
-        </h1>
-
-        <label htmlFor="check" onClick={() => setMenuBtn(!menuBtn)}>
-          <h1 className="fa">
+      <header>
+        <nav>
+          <input type="checkbox" id="check" onClick={() => setMenuBtn(!menuBtn)} />
+          <label htmlFor='check' class="checkbtn">
             {
               (menuBtn) ? <FaBarsStaggered /> : <GrClose />
             }
-          </h1>
-        </label>
-        <ul>
-          <li>
-            <Link
-              style={{ color: navState.home ? "#00e0d5" : null }}
-              to="/"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ color: navState.about ? "#00e0d5" : null }}
-              to="/about"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ color: navState.skills ? "#00e0d5" : null }}
-              to="/skills"
-            >
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ color: navState.projects ? "#00e0d5" : null }}
-              to="/projects"
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              style={{ color: navState.contact ? "#00e0d5" : null }}
-              to="/contact"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+          </label>
+
+          <img src={logo} alt="gd" className="logo" />
+
+          <ul>
+            <li>
+              <Link
+                style={{ color: navState.home ? "#00e0d5" : null }}
+                to="/"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: navState.about ? "#00e0d5" : null }}
+                to="/about"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: navState.skills ? "#00e0d5" : null }}
+                to="/skills"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: navState.projects ? "#00e0d5" : null }}
+                to="/projects"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: navState.contact ? "#00e0d5" : null }}
+                to="/contact"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
     </Fragment>
   )
 }
