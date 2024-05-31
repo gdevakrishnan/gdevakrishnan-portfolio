@@ -110,8 +110,7 @@ function Contact() {
                 <tr>
                   <th><h1><FaLocationDot /></h1></th>
                   <td>
-                    <p>11, Kamatchi Nagar,</p>
-                    <p>Om Sakti Nagar, Kovaipudhur,</p>
+                    <p>11, Kovaipudhur,,</p>
                     <p>Coimbatore - 641042</p>
                   </td>
                 </tr>
